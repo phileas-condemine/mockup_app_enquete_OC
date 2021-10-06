@@ -3,6 +3,16 @@
 
 # https://shinydata.wordpress.com/2015/02/02/a-few-things-i-learned-about-shiny-and-reactive-programming/
 function(input, output,session) { 
+  
+  source("db_connection.R")
+  print("data is coming")
+  base_identifiants=data.table(loadAuth())
+  print(base_identifiants)
+  print("boom that's the data")
+  
+  click_ID=0
+  
+  
   output$match_ID=reactive(-1)
   showModal(modalDialog(
     title = "Connexion à l'outil",size="s",
