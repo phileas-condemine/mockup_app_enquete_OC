@@ -3,9 +3,9 @@
 
 # https://shinydata.wordpress.com/2015/02/02/a-few-things-i-learned-about-shiny-and-reactive-programming/
 function(input, output,session) { 
-  
   source("db_connection.R")
   print("data is coming")
+  print("if the app crashes when run on localhost, maybe you need to whitelist your IP on mongoDB !")
   base_identifiants=data.table(loadAuth())
   print(base_identifiants)
   print("boom that's the data")
